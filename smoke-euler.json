@@ -1,0 +1,83 @@
+{
+  "profile": "smoke",
+  "problem": "euler",
+  "cells": 32,
+  "dt": 0.02,
+  "seeds": [
+    1621,
+    241,
+    461
+  ],
+  "architecture": {
+    "dcino_width": 48,
+    "modes": 16,
+    "depth": 3,
+    "local_stencil": 5,
+    "kappa": 0.2,
+    "alpha": 0.05,
+    "power": 2,
+    "branches": [
+      "spectral",
+      "local"
+    ]
+  },
+  "training": {
+    "batch_size": 2,
+    "windows_steps": [
+      1,
+      2
+    ],
+    "validation_steps": 4,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "clip": 1.0,
+    "max_updates": 2,
+    "min_updates": 2,
+    "validation_interval": 1,
+    "relative_threshold": 0.002,
+    "stop_patience": 12,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 4,
+    "min_lr": 1e-05,
+    "max_seconds": 300
+  },
+  "data": {
+    "train": {
+      "count": 4,
+      "seed": 120104729,
+      "reference_cells": 64,
+      "steps": 4,
+      "output_stride": 1
+    },
+    "validation": {
+      "count": 2,
+      "seed": 26101531,
+      "reference_cells": 64,
+      "steps": 4,
+      "output_stride": 1
+    },
+    "test": {
+      "count": 2,
+      "seed": 26101591,
+      "reference_cells": 64,
+      "steps": 4,
+      "output_stride": 1
+    },
+    "weak": {
+      "count": 2,
+      "seed": 120181081,
+      "reference_cells": 64,
+      "steps": 4,
+      "amplitude": 0.0625,
+      "smooth_only": true
+    },
+    "veryweak": {
+      "count": 2,
+      "seed": 120181081,
+      "reference_cells": 64,
+      "steps": 4,
+      "amplitude": 0.015625,
+      "smooth_only": true
+    }
+  }
+}

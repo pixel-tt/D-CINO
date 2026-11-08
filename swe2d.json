@@ -1,0 +1,80 @@
+{
+  "profile": "paper",
+  "problem": "swe2d",
+  "cells": 64,
+  "dt": 0.02,
+  "seeds": [
+    1621,
+    241,
+    461
+  ],
+  "architecture": {
+    "dcino_width": 24,
+    "modes": 4,
+    "depth": 3,
+    "local_stencil": 5,
+    "kappa": 0.2,
+    "alpha": 0.05,
+    "power": 2,
+    "branches": [
+      "spectral",
+      "local"
+    ]
+  },
+  "training": {
+    "batch_size": 16,
+    "windows_steps": [
+      4,
+      8,
+      16
+    ],
+    "validation_steps": 40,
+    "lr": 0.001,
+    "weight_decay": 1e-05,
+    "clip": 1.0,
+    "max_updates": 6000,
+    "min_updates": 1000,
+    "validation_interval": 100,
+    "relative_threshold": 0.002,
+    "stop_patience": 12,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 4,
+    "min_lr": 1e-05,
+    "max_seconds": 7200
+  },
+  "data": {
+    "train": {
+      "count": 128,
+      "seed": 9281101,
+      "reference_cells": 256,
+      "master_cells": 512,
+      "solver_batch": 4,
+      "steps": 20
+    },
+    "validation": {
+      "count": 12,
+      "seed": 26101521,
+      "reference_cells": 256,
+      "master_cells": 512,
+      "solver_batch": 2,
+      "steps": 40
+    },
+    "test": {
+      "count": 32,
+      "seed": 26101581,
+      "reference_cells": 256,
+      "master_cells": 512,
+      "solver_batch": 2,
+      "steps": 40
+    },
+    "weak": {
+      "count": 64,
+      "seed": 10053303,
+      "reference_cells": 256,
+      "master_cells": 512,
+      "solver_batch": 4,
+      "steps": 10,
+      "amplitude": 0.0625
+    }
+  }
+}

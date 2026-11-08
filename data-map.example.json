@@ -1,0 +1,22 @@
+{
+  "swe": {
+    "train": {"path": "train-long-swe.npz", "array": "n128", "layout": "channels_first"},
+    "validation": {"path": "swe-long.npz", "array": "states", "layout": "channels_first"},
+    "test": {"path": "swe-n512.npz", "array": "states", "layout": "channels_last", "time_stride": 4},
+    "weak": {"path": "swe-ood.npz", "array": "weak", "layout": "channels_last", "family": "smooth", "id_prefix": "swe-weak"},
+    "veryweak": {"path": "swe-ood.npz", "array": "veryweak", "layout": "channels_last", "family": "smooth", "id_prefix": "swe-weak"}
+  },
+  "euler": {
+    "train": {"path": "train-long-euler.npz", "array": "n128", "layout": "channels_first"},
+    "validation": {"path": "euler-long.npz", "array": "states", "layout": "channels_first"},
+    "test": {"path": "euler-n512.npz", "array": "states", "layout": "channels_last", "time_stride": 4},
+    "weak": {"path": "euler-ood.npz", "array": "weak", "layout": "channels_last", "family": "smooth", "id_prefix": "euler-weak"},
+    "veryweak": {"path": "euler-ood.npz", "array": "veryweak", "layout": "channels_last", "family": "smooth", "id_prefix": "euler-weak"}
+  },
+  "swe2d": {
+    "train": {"path": "train-long-runtime-float32.npz", "array": "n64", "layout": "channels_first"},
+    "validation": {"path": "validation-long-runtime-float32.npz", "array": "n64", "layout": "channels_first"},
+    "test": {"path": "holdout-primary.npz", "array": "n64", "layout": "channels_first"},
+    "weak": {"path": "test-weak.npz", "array": "n64", "layout": "channels_first"}
+  }
+}
